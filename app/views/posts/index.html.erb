@@ -12,8 +12,11 @@
   </thead>
 
   <tbody>
-    <% @posts.each do |post| %>
+    <% @pos.each do |post| %>
       <tr>
+      <% if current_user %>
+        <td><%= post.user.name %></td>
+      <% end %>
         <td><%= post.title %></td>
         <td><%= post.body %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
